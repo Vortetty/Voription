@@ -73,30 +73,11 @@ def getfile():
 def getfiledec():
   f = input("what file would you like to decrypt? must be in the same directory this script is run from, or be an absolute path starting from the root directory: ")
   return f
-
-def bits(data):
-  # convert every byte of data to the corresponding 2-digit hexadecimal
-  hex_str = str(binascii.hexlify(data))
-  # now create a list of 2-digit hexadecimals
-  hex_list = []
-  bin_list = []
-  for ix in range(2, len(hex_str)-1, 2):
-      hex = hex_str[ix]+hex_str[ix+1]
-      hex_list.append(hex)
-      bin_list.append(bin(int(hex, 16))[2:])
-  #print(bin_list)
-  bin_str = "".join(bin_list)
-  return bin_str
-
-def hexer(data):
-  # convert every byte of data to the corresponding 2-digit hexadecimal
-  hex_str = binascii.unhexlify(data)
-  return hex_str
-
+ 
 def init():
   #get bits
   file = getfile()
-  fin = open(file, "rb")
+  fin = open(file, "r")
   data = fin.read()
   data = str(data)
   data = bin(int.from_bytes(data.encode(), 'big'))
