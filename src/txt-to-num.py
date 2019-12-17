@@ -17,7 +17,19 @@
                                                                         |___/
   This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
   To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
-  To obtain rights to use this commecially (if you want to for some reason, contact me on reddit /u/vortetty
+  
+  To obtain rights to use this commercially (if you want to for some reason, contact me on reddit /u/vortetty
+  
+  if you copy this, please leave me as a credit using the below format:
+  
+    Original by Vortetty on Github:
+    https://github.com/Vortetty/Voryption/
+    Vortetty's Github Profile:
+    https://github.com/Vortetty/
+   
+  for consitency with the copyright notice, use 
+  http://patorjk.com/software/taag/#p=display&h=2&v=1&f=Big&t=%3C%20your%20text%20here%20%3E
+  to generate your banner, all settings provided on that link are the same as used here
   
 """
 
