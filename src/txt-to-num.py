@@ -15,19 +15,13 @@
   \  \____|  /  |____|\___/ |_| /_/       \/ \___/|_|   \__\___|\__|\__|\__, |
    \________/                                                            __/ |
                                                                         |___/
-
   This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
   To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
-
   To obtain rights to use this commecially (if you want to for some reason, contact me on reddit /u/vortetty
   
 """
 
-import math
 import os
-import textwrap
-import binascii
-import shutil
 
 def tonum( p ):
   pswd = []
@@ -73,6 +67,10 @@ def getfile():
 def getfiledec():
   f = input("what file would you like to decrypt? must be in the same directory this script is run from, or be an absolute path starting from the root directory: ")
   return f
+
+def addid(filename,uid):
+    name, ext = os.path.splitext(filename)
+    return "{name}_{uid}{ext}".format(name=name, uid=uid, ext=ext)
  
 def init():
   #get bits
@@ -89,11 +87,11 @@ def init():
   return (int(key), int("1"+str(data)), file) # add 1 to beginning of data to avoid "SyntaxError: leading zeros in decimal integer literals are not permitted"
 
 def encrypt():
-  key, binary, file = init()
+  key, binary, filename = init()
   num1 = key^2+key
   y = ((binary*key)*num1)
 
-  f = open(file+"_encrypted", "w+")
+  f = open(addid(filename,"encrypted"), "w+")
   f.write(str(y))
   f.close()
   
@@ -123,10 +121,6 @@ def decrypt():
   print(data)
   
   # then write to decrypted file
-  f = open(fin+"_decrypted", "w+")
+  f = open(addid(fin,"decrypted"), "w+")
   f.write(data)
   f.close()
-
-
-  
-
