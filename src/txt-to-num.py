@@ -33,7 +33,8 @@
   
 """
 
-import os
+import os, math
+from decimal import *
 
 def tonum( p ):
   pswd = []
@@ -102,7 +103,6 @@ def encrypt():
   key, binary, filename = init()
   num1 = key^2+key
   y = ((binary*key)*num1)
-  y = ((binary*key)*num1)^2
 
   f = open(addid(filename,"encrypted"), "w+")
   f.write(str(y))
@@ -123,7 +123,6 @@ def decrypt():
   num1 = key^2+key
 
   # decrypt text and remove the added one
-  data = sqrt(data)
   data = data//num1
   data = data//key
   data = str(data)[1:]
