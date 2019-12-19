@@ -1,5 +1,5 @@
 # Voryption
-An encryption algorithm i made for the fun of it.
+An encryption algorithm i made for the fun of it. did it and ended up gaining appreciation for good encryption programs. i also realized this was not a good way to get into cryptography.
 
 # Vulnerabilities
 Obviouly there will be some, any vulnerabilities you find, if you can fix them please tell me about them and how to fix it or do a pull request. if you do fix it i will test it and provided that it works, merge it.
